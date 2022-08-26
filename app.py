@@ -2,10 +2,12 @@
 import os
 from dotenv import load_dotenv
 
-# import pandas as pd
-# import requests
+import requests
+from requests.auth import HTTPBasicAuth
 # import json
 # import alpaca_trade_api as tradeapi
+
+# import pandas as pd
 import logging
 # logging.basicConfig(level=logging.INFO)
 logging.basicConfig(level=logging.DEBUG)
