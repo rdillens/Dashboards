@@ -31,8 +31,11 @@ production_endpoint = "https://broker-api.alpaca.markets/"
 endpoint = sandbox_endpoint
 
 post_str = endpoint + "v1/assets"
-print(post_str)
+logging.debug(post_str)
 
 # Get all assets in JSON
 auth_str = HTTPBasicAuth(alpaca_api_key, alpaca_api_secret)
 assets = requests.get(post_str, auth = auth_str).json()
+
+class_list = sorted(list(set([asset["class"] for asset in assets])))
+status_list = sorted(list(set([asset["status"] for asset in assets])))
