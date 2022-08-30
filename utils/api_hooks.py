@@ -3,7 +3,6 @@ logging.basicConfig(level=logging.INFO)
 
 import requests
 from requests.auth import HTTPBasicAuth
-import json
 
 import os
 from dotenv import load_dotenv
@@ -64,4 +63,3 @@ def get_bars(
     get_str = base_url + f'/stocks/{symbol}/bars'
     logging.debug("done in function")
     return requests.get(get_str, params = params, auth = auth_str).json()
-    # return requests.get(get_str, params = {'timeframe':'1Min'}, auth = auth_str).json()
